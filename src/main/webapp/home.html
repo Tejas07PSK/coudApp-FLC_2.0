@@ -99,5 +99,169 @@
               </span>
               <span id="cpwrtNlnks"><b>©2017-2018,Flashcart™ INC India,Palash Sarkar.</b></span>
         </div>
+        <div id="page_cover">
+              <div id="add_map" class="modals">
+                   <span onclick="close_modalsncovers (this);" class="close" style="top: 10px;right: 20px;"></span>
+                   <span class="ln"></span>
+                   <div id="mod_slide_cont">
+                        <div id="mod_slide_box">
+                             <div id="od_chek" class="mod_slide_box_drw">
+                                  <h2 style="color:navy; font-family:'Consolas','Monaco'; margin:25px;">Your Order Summary -</h2>
+                                  <h4 style="color:black; font-family:'Consolas','Monaco'; margin-left:200px; margin-top: 30px;">Total Number of Items Selected = </h4>
+                                  <table id="ods">
+                                       <tr id="os"><th>Item Details : </th><th>Price : </th></tr>
+                                       <!--<tr class="in_between"><td><img src="images/flash.png" alt="Smiley face" height="40" width="40" style="position: relative; left: -60px;"/>HeadPhones</td><td>Rs. 3200</td></tr>-->
+                                       <tr id="ol"><th style="text-align:right; text-decoration:none;">Total Amt : </th><th id="tot" style="text-decoration:none;"></th></tr>
+                                  </table>
+                                  <button id="plc_od" class="modal_btns" type="submit">Place Order</button>
+                                  <button id="chg_add" class="modal_btns" type="submit">Change Delivery Address</button>
+                                  <button id="ccl" class="modal_btns" type="submit">Close</button>
+                             </div>
+                             <div id="user_reg" class="mod_slide_box_drw">
+                                  <span id="name_det" class="headers">NAME DETAILS -</span>
+                                  <span id="fst_ln" class="ins_new_add">
+                                       <span id="fst_nm" class="labels">Firstname :</span>
+                                       <input id="fst_nm_inp" class="new_add_inbxs withhover" placeholder="Enter Firstname..." type="text" maxlength="100"/>
+                                       <span id="lst_nm" class="labels">Lastname :</span>
+                                       <input id="lst_nm_inp" class="new_add_inbxs withhover" placeholder="Enter Lastname..." type="text" maxlength="100"/>
+                                  </span>
+                                  <span id="add_det" class="headers">ADDRESS DETAILS -</span>
+                                  <span id="scnd_ln" class="ins_new_add">
+                                       <span id="lc_dt" class="labels">Locality :</span>
+                                       <input id="lc_dt_inp" class="new_add_inbxs withhover" placeholder="Enter Locality..." type="text" maxlength="1000"/>
+                                  </span>
+                                  <span id="thrd_ln" class="ins_new_add">
+                                       <span id="cty_nm" class="labels">City :</span>
+                                       <input id="cty_nm_inp" class="new_add_inbxs withhover" placeholder="Enter City..." type="text" maxlength="100"/>
+                                       <span id="zip_nm" class="labels">Zipcode :</span>
+                                       <input id="zip_nm_inp" class="new_add_inbxs withhover" placeholder="Enter Zipcode..." type="text" maxlength="10"/>
+                                  </span>
+                                  <span id="frth_ln" class="ins_new_add">
+                                       <span id="st_nm" class="labels">State :</span>
+                                       <input id="st_nm_inp" class="new_add_inbxs withhover" placeholder="Enter State..." type="text" maxlength="50"/>
+                                       <span id="cntry_nm" class="labels">Country :</span>
+                                       <input id="cntry_nm_inp" class="new_add_inbxs withhover" placeholder="Enter Country..." type="text" maxlength="100"/>
+                                  </span>
+                                   <span id="cred_det" class="headers">CREDENTIAL DETAILS -</span>
+                                   <span id="fifth_ln" class="ins_new_add">
+                                        <span id="eml_dt" class="labels">Email :</span>
+                                        <input id="eml_dt_inp" class="new_add_inbxs withhover" placeholder="Enter Email..." type="text" maxlength="100"/>
+                                        <span id="mobno_dt" class="labels">Phone Number :</span>
+                                        <input id="mobno_dt_inp" class="new_add_inbxs withhover" placeholder="Enter Number..." type="text" maxlength="10"/>
+                                   </span>
+                                   <span id="sxth_ln" class="ins_new_add">
+                                        <span id="pss_dt" class="labels">Password :</span>
+                                        <input id="pss_dt_inp" class="new_add_inbxs withhover" placeholder="Enter Password..." type="password" maxlength="12"/>
+                                        <span id="repass_dt" class="labels">Re-Enter Password :</span>
+                                        <input id="repass_dt_inp" class="new_add_inbxs withhover" placeholder="Verify Password..." type="password" maxlength="12"/>
+                                   </span>
+                                   <button id="urb" class="modal_btns" type="submit">Submit</button>
+                                   <button id="cncl" class="modal_btns" type="submit">Cancel</button>
+                                   <div style="position: relative; top: 420px; height: 60px;"></div>
+                             </div>
+                             <div id="user_lin" class="mod_slide_box_drw">
+                                  <span id="lgn_logo"><b>FLASHCART</b></span>
+                                  <span id="lgn_flash"></span>
+                                  <span id="uln_fieldset">
+                                       <span id="head_fld">User Login</span>
+                                       <span id="fst_ln_fldst" class="ins_new_add">
+                                            <span id="ent_uid_eml" class="labels"><b>Enter User-Id/Email-Id :</b></span>
+                                       </span>   
+                                       <span id="scnd_ln_fldst" class="ins_new_add">
+                                            <input id="ent_uid_eml_inp" class="new_add_inbxs" placeholder="Enter UID or Email-ID..." type="text" maxlength="100"/>
+                                       </span> 
+                                       <span id="trd_ln_fldst" class="ins_new_add">
+                                            <span id="ent_pss" class="labels"><b>Enter Password :</b></span>
+                                       </span>
+                                       <span id="frth_ln_fldst" class="ins_new_add">
+                                            <input id="ent_pss_inp" class="new_add_inbxs" placeholder="Enter Password..." type="password" maxlength="12"/>
+                                            <input type="checkbox" onclick="passwordShowHide();" style="position: relative; top: 10px; right: -25px; height: 25px; width: 25px;"/>
+                                       </span>
+                                       <button id="ulb" class="modal_btns" type="submit"><b>Submit</b></button>
+                                  </span>
+                            </div>
+                            <div id="loc_set" class="mod_slide_box_drw">
+                                  <div id="add_result">
+                                       <span id="saved_addrs" class="specheaders"><b>Your Saved Addresses -</b></span>
+                                       <table id="AddList">
+                                            <!--<tr> <td class="old_add">No Saved Addrs</td> </tr>
+                                            <tr> <td class="old_add"></td> </tr>-->
+                                       </table>
+                                       <span id="lst_lod">
+                                            <span id="lst_txt">Empty!!</span>
+                                            <span id="loader_lst"></span>
+                                        </span>   
+                                       <span id="svd_add" class="specheaders">
+                                            <input type="checkbox" style="position: absolute; left: 5px;" value="0"/>
+                                            <input id="sltd_addid" type="hidden" style="display: none;" value="0"/>
+                                            Use the<br/>selected saved<br/>address
+                                       </span>
+                                       <span onmouseover="showDrop('Default Address');" onmouseout="hideDrop('Default Address');" id="def_add" class="specheaders">
+                                            <input type="checkbox" style="position: absolute; left: 6px;" value="0"/>
+                                            <input id="defuaads" type="hidden" style="display: none;" value="0"/>
+                                            Use<br/>my address
+                                       </span>
+                                       <span id="entnew_addrs" class="specheaders"><b>Enter New Address -</b></span>
+                                       <span id="new_add">
+                                            <span id="new_add_loc" class="ins_new_add"><span id="new_add_loc_label" class="labels">Locality :</span><input id="new_add_loc_inp" class="new_add_inbxs" placeholder="Enter Locality..." type="text" maxlength="1000"/></span>
+                                            <span id="new_add_cty" class="ins_new_add"><span id="new_add_cty_label" class="labels">City :</span><input id="new_add_cty_inp" class="new_add_inbxs" placeholder="Enter City..." type="text" maxlength="100"/></span>
+                                            <span id="new_add_zip" class="ins_new_add"><span id="new_add_zip_label" class="labels">Zipcode :</span><input id="new_add_zip_inp" class="new_add_inbxs" placeholder="Enter Zip..." type="text" maxlength="9"/></span>
+                                            <span id="new_add_state" class="ins_new_add"><span id="new_add_state_label" class="labels">State :</span><input id="new_add_state_inp" class="new_add_inbxs" placeholder="Enter State..." type="text" maxlength="50"/></span>
+                                            <span id="new_add_cntry" class="ins_new_add"><span id="new_add_cntry_label" class="labels">Country :</span><input id="new_add_cntry_inp" class="new_add_inbxs" placeholder="Enter Country..." type="text" maxlength="50"/></span>
+                                      </span>
+                                       <span id="us_nw_add" class="specheaders">
+                                            <input type="checkbox" style="position: absolute; left: 0px;" value="0"/>
+                                            Use this<br/>new address
+                                       </span>
+                                       <span id="sv_nw_add" class="specheaders">
+                                            <input type="checkbox" style="position: absolute; left: -5px;" value="0"/>
+                                            Save this<br/>new address<br/>for me
+                                       </span>
+                                       <input id="selec_add" type="hidden" value="" style="display:none;"/>
+                                       <button id="sta" class="modal_btns" type="submit">Set Address</button>
+                                       <button id="sonmp" class="modal_btns" type="submit">Show On Map</button>
+                                       <button id="sonmp_wdir" class="modal_btns" type="submit">Get Directions</button>
+                                       <span id="def_addr">
+                                            <span id=sp_left_arr></span>
+                                       </span>
+                                  </div>
+                                  <div id="map"></div>
+                             </div>
+                            <div id="lod" class="mod_slide_box_drw">
+                                  <div id="mod_loader"></div>
+                                  <div id="result_img"></div>
+                                  <span id="message">Registration Successful</span>
+                                  <div id="details">
+                                       <br/>
+                                        Details :
+                                        <span id="output"></span>
+                                  </div>
+                                  <button id="cnt_shpp" class="modal_btns" type="submit"><b>Continue Shopping</b></button>
+                                  <button id="gtln" class="modal_btns" type="submit"><b>Go To Login</b></button>
+                                  <div style="position: relative; top: 750px; height: 60px;"></div>
+                            </div>
+                        </div>
+                   </div>
+                   <span class="ln" style="top: 550px;"></span>
+              </div>
+         </div>
+         <span id="crt" class="big_dop_menu">
+              <span id="no_item">Your Cart Is Empty!!<br/>Start Shopping!!</span>
+              <span id="item_container">
+                   <!--<span class="crt_items"><span class="crt_img"></span><span class="crt_text">Sony<br/>Rs. 25000</span><button class="crt_remv"></button></span>-->
+              </span>
+              <button id="prcd_chkot">Proceed To Checkout</button>
+         </span>
+         <span id="log" class="lst_menu_dropdown">
+              <button id="lgn" class="modal_btns" type="submit">LogIn</button>
+              <span id="log_smt">FirstTime Huh?</span>
+              <a id="lnk_reg" class="cat_list_opts">Click Here</a>
+              <span class="up_arrow"></span>
+         </span>
+          
+          <script type="text/javascript" src="scripts/mainscript.js"></script>
+          <script type="text/javascript" src="scripts/ajx.js"></script>
+          <script type="text/javascript" src="scripts/jqry.js"></script>
+          
     </body>
 </html>
