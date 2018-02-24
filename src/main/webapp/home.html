@@ -21,5 +21,39 @@
               <input id="nt_sv_fr_usr" type="hidden" value="0" style="display:none;"/>
               <input id="use_usr_def_add" type="hidden" value="0" style="display:none;"/>
         </fieldset>
+        <header id="nav_bar">
+                <div id="first_line">
+                     <span id="logo"><i><b>FLASHCART</b></i></span>
+                     <span id="flash"></span>
+                     <span id="search_items">
+                          <button id="cat_drop_b">All Categories</button>
+                          <input id="search_field" type="text" maxlength="10000" placeholder="Search For items ....."/>
+                          <button id="search_button" type="submit"></button>
+                     </span>
+                     <span id="nficNcrt">
+                          <button onclick="show_cart();" class="icn_btn">Cart<span class="down_arr"></span></button>
+                          <button style="background-image: url('images/alert.png'); background-size: 48px 40px; left: 112px; width: 110px;" class="icn_btn">Feeds<span class="down_arr"></span></button>
+                     </span>
+                </div>
+                <div id="second_line">
+                     <span id="delev_loc">
+                          <i style="position: absolute; left: 60px; top:-1px; display: block; font-size: 15px;">Delivery Location</i>
+                          <!--<button onclick="show_modals('map');" id="delev_loc_set"><b>Not Set</b></button>-->
+                          <button id="delev_loc_set"><b>Not Set</b></button>
+                     </span>
+                     <ul id="menu_bar">
+                          <li onmouseover="showDrop('Categories');" onmouseout="hideDrop('Categories');" class="menu_list"><i>Categories</i><span class="down_arr"></span></li>
+                          <li onmouseover="showDrop('Orders');" onmouseout="hideDrop('Orders');" class="menu_list" style="left:175px;"><i>Orders</i><span class="down_arr"></span></li>
+                          <li onmouseover="showDrop('Tracking');" onmouseout="hideDrop('Tracking');" class="menu_list" style="left:283px;"><i>Tracking</i><span class="down_arr"></span></li>
+                          <li class="menu_list" style="left:410px;"><i>Customer Support</i><span class="down_arr"></span></li>
+                          <li onmouseover="showDrop('About');" onmouseout="hideDrop('About');" class="menu_list" style="left:608px;"><i>About</i><span class="down_arr"></span></li>
+                     </ul>
+                     <span onmouseover="showDrop('UserPort');" onmouseout="hideDrop('UserPort');" id="log_sgin">
+                          Hello!<br/>
+                          <b>Sign_In/Sign_Up</b>
+                          <span class="down_arr"></span>
+                    </span>
+                </div>
+        </header>
     </body>
 </html>
