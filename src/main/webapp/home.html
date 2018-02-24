@@ -55,5 +55,21 @@
                     </span>
                 </div>
         </header>
+        <div id="slide">
+              <div class="slide_img" title="image1"></div>
+              <div class="slide_img" title="image2" style="background-image: url('images/macs.jpg');display: none;"></div>
+              <div class="slide_img" title="image3" style="background-image: url('images/gadgets.jpg');display: none;"></div>
+              <div class="slide_img" title="image4" style="background-image: url('images/gcon.jpg');display: none;"></div>
+              <span id="nxt_prv">
+                   <button id="prev" onclick="minusSlides(1);"></button>
+                   <button id="nxt" onclick="plusSlides(1);"></button>
+              </span>
+              <span id="dot_container">
+                   <span class="dot active" onclick="currentSlide(1);"></span> 
+                   <span class="dot" onclick="currentSlide(2);"></span> 
+                   <span class="dot" onclick="currentSlide(3);"></span> 
+                   <span class="dot" onclick="currentSlide(4);"></span>
+              </span>
+        </div>
     </body>
 </html>
