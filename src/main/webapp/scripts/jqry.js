@@ -149,17 +149,25 @@
                                                                                success : function (result,status,xhr)
                                                                                           {
                                                                                               $("span#output").html($("span#output").html()+"<br/>"+"SUCCESS;"+"<br/>"+"statusText : "+status+"<br/>"+"statusCode : "+xhr.status+"<br/>"+"readyState : "+xhr.readyState+"<br/>"+"response : "+JSON.stringify(result)+"<br/>");
-                                                                                              if ((result.USER_SAVED_ADDRS).length === 0)
+                                                                                              if (result.USER_SAVED_ADDRS === undefined)
                                                                                               {
                                                                                                    $("span#lst_lod")["0"].style.display = "block";
                                                                                                    $("span#lst_lod").children("span#lst_txt")["0"].style.display = "block";
                                                                                               }
                                                                                               else
                                                                                               {
-                                                                                                 for (i=0;i<(result.USER_SAVED_ADDRS).length;i++)
-                                                                                                 {
-                                                                                                    appndTrs(result.USER_SAVED_ADDRS[i].ADD_ID,result.USER_SAVED_ADDRS[i].SVD_LOCALITY,result.USER_SAVED_ADDRS[i].SVD_CITY,result.USER_SAVED_ADDRS[i].SVD_ZIPCODE,result.USER_SAVED_ADDRS[i].STATE,result.USER_SAVED_ADDRS[i].SVD_COUNTRY);
-                                                                                                 }
+                                                                                                   if ((result.USER_SAVED_ADDRS).length === 0)
+                                                                                                   {
+                                                                                                        $("span#lst_lod")["0"].style.display = "block";
+                                                                                                        $("span#lst_lod").children("span#lst_txt")["0"].style.display = "block";
+                                                                                                   }
+                                                                                                   else
+                                                                                                   {
+                                                                                                        for (i=0;i<(result.USER_SAVED_ADDRS).length;i++)
+                                                                                                        {
+                                                                                                              appndTrs(result.USER_SAVED_ADDRS[i].ADD_ID,result.USER_SAVED_ADDRS[i].SVD_LOCALITY,result.USER_SAVED_ADDRS[i].SVD_CITY,result.USER_SAVED_ADDRS[i].SVD_ZIPCODE,result.USER_SAVED_ADDRS[i].STATE,result.USER_SAVED_ADDRS[i].SVD_COUNTRY);
+                                                                                                        }
+                                                                                                   }
                                                                                               }
                                                                                            },
                                                                                  error : function (xhr,status,error)
