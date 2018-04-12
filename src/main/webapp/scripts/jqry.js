@@ -151,8 +151,7 @@
                                                                                               $("span#output").html($("span#output").html()+"<br/>"+"SUCCESS;"+"<br/>"+"statusText : "+status+"<br/>"+"statusCode : "+xhr.status+"<br/>"+"readyState : "+xhr.readyState+"<br/>"+"response : "+JSON.stringify(result)+"<br/>");
                                                                                               if (result.USER_SAVED_ADDRS === undefined)
                                                                                               {
-                                                                                                   $("span#lst_lod")["0"].style.display = "block";
-                                                                                                   $("span#lst_lod").children("span#lst_txt")["0"].style.display = "block";
+                                                                                                   console.log("Error handled!!");
                                                                                               }
                                                                                               else
                                                                                               {
