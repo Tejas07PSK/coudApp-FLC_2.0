@@ -262,12 +262,12 @@
                    }
                    else
                    {
-                        $("button#delev_loc_set").html("<b>"+$("input#new_add_cty").val()+","+$("input#new_add_zip").val()+"</b>");
-                        $("input#sv_def_loc").val($("input#new_add_loc").val());
-                        $("input#sv_def_cty").val($("input#new_add_cty").val());
-                        $("input#sv_def_zip").val($("input#new_add_zip").val());
-                        $("input#sv_def_ste").val($("input#new_add_state").val());
-                        $("input#sv_def_cntry").val($("input#new_add_cntry").val());
+                        $("button#delev_loc_set").html("<b>"+$("input#new_add_cty_inp").val()+","+$("input#new_add_zip_inp").val()+"</b>");
+                        $("input#sv_def_loc").val($("input#new_add_loc_inp").val());
+                        $("input#sv_def_cty").val($("input#new_add_cty_inp").val());
+                        $("input#sv_def_zip").val($("input#new_add_zip_inp").val());
+                        $("input#sv_def_ste").val($("input#new_add_state_inp").val());
+                        $("input#sv_def_cntry").val($("input#new_add_cntry_inp").val());
                         $("input#usr_svd_adid").val("0");
                         $("input#nt_sv_fr_usr").val("1");
                         $("input#use_usr_def_add").val("0");
