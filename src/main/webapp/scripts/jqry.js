@@ -41,9 +41,9 @@
               console.log("false");
               $(this).val("0");    
          }
-         ele=$("span#svd_add").children("input");
+         ele=$("span#svd_add").children("input:first-child");
          hd_othchk(ele);
-         ele=$("span#def_add").children("input");
+         ele=$("span#def_add").children("input:first-child");
          hd_othchk(ele);
     });
     
@@ -59,7 +59,7 @@
          }
     });
     
-    $("span#svd_add").children("input").click(function ()
+    $("span#svd_add").children("input:first-child").click(function ()
     {
          console.log("hah");
          var ele;
@@ -71,7 +71,7 @@
          {
               $(this).val("0");    
          }
-         ele=$("span#def_add").children("input");
+         ele=$("span#def_add").children("input:first-child");
          hd_othchk(ele);
          ele=$("span#us_nw_add").children("input");
          hd_othchk(ele);
@@ -79,7 +79,7 @@
          hd_othchk(ele);
     });
     
-    $("span#def_add").children("input").click(function ()
+    $("span#def_add").children("input:first-child").click(function ()
     {
          var ele;
          if($(this).val()==="0")
@@ -94,7 +94,7 @@
          hd_othchk(ele);
          ele=$("span#sv_nw_add").children("input");
          hd_othchk(ele);
-         ele=$("span#svd_add").children("input");
+         ele=$("span#svd_add").children("input:first-child");
          hd_othchk(ele);
     });
     
@@ -201,8 +201,11 @@
            $("input#usr_sl").val(obj.USER_SLNO);
            $("span#def_addr").html("<br/>"+obj.USER_LOCALITY+",<br/>"+obj.USER_CITY+",<br/>"+obj.USER_ZIPCODE+",<br/>"+obj.USER_STATE+",<br/>"+obj.USER_COUNTRY+"<br/>");
            $("input#use_usr_def_add").val("1");
-           $("input#defuaads").val(JSON.stringify({"cty":obj.USER_CITY,"zip":obj.USER_ZIPCODE}));
-           $("span#def_add").children("input").trigger("click");
+           var td=JSON.stringify({"cty":obj.USER_CITY,"zip":obj.USER_ZIPCODE});
+           console.log(document.getElementById("defu_aads"));
+           $("input#defu_aads").val(td);
+           console.log(td);
+           $("span#def_add").children("input:first-child").trigger("click");
     }
     
     $("button#sta").click(function (){
@@ -246,7 +249,7 @@
                                                           ($("table#AddList").children("tr:nth-child("+(($("table#AddList").children("tr")).length)+")")).children("td.old_add").trigger("click");
                                                           //$("table#AddList tr:nth-child("+(($("table#AddList tr")).length-1)+")").children("td.old_add").trigger("click");
                                                           console.log("kaal2");
-                                                          $("span#svd_add").children("input").trigger("click");
+                                                          $("span#svd_add").children("input:first-child").trigger("click");
                                                           alert(data.STATUS+"<br/>Details :<br/>"+xhr.readyState+"<br/>"+status+"<br/>"+xhr.status+"<br/>"+xhr.responseText);
                                                      }
                                                      else
@@ -274,7 +277,7 @@
                         alert("Address Successfully Set!!");
                    }
             }
-            if ($("span#svd_add").children("input").val()==="1")
+            if ($("span#svd_add").children("input:first-child").val()==="1")
             {
                  var temp=JSON.parse($("input#sltd_addid").val());
                  $("button#delev_loc_set").html("<b>"+temp.cty+","+temp.zip+"</b>");
@@ -288,9 +291,9 @@
                  $("input#use_usr_def_add").val("0");
                  alert("Address Successfully Set!!");
             }
-            if ($("span#def_add").children("input").val()==="1")
+            if ($("span#def_add").children("input:first-child").val()==="1")
             {
-                 var temp=JSON.parse($("input#defuadds").val());
+                 var temp=JSON.parse($("input#defu_aads").val());
                  $("button#delev_loc_set").html("<b>"+temp.cty+","+temp.zip+"</b>");
                  $("input#sv_def_loc").val("0");
                  $("input#sv_def_cty").val("0");
