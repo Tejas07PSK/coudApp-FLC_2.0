@@ -182,6 +182,7 @@
                                                                                                $("span#output").html($("span#output").html()+"<br/>"+"FINISHED;"+"<br/>"+"readyState : "+xhr.readyState+"<br/>"+"statusCode : "+xhr.status+"<br/>"+"statusText : "+status+"<br/><br/><br/>").parent().css("display","block");
                                                                                                $("button#cnt_shpp").delay(100).css("display","block");
                                                                                                $("div#result_img").delay(200).css("display","block");
+                                                                                               $("div#space").delay(200).css("display","block");
                                                                                                $("div#lod").animate({ scrollTop: 0 }, "slow");
                                                                                           },
                                                                                 headers : { 
@@ -416,6 +417,7 @@
                                                                                                $("span#output").html($("span#output").html()+"<br/>"+"FINISHED;"+"<br/>"+"readyState : "+xhr.readyState+"<br/>"+"statusCode : "+xhr.status+"<br/>"+"statusText : "+status+"<br/>").parent().css("display","block");
                                                                                                $("button#gtln").delay(100).css("display","block");
                                                                                                $("div#result_img").delay(200).css("display","block");
+                                                                                               $("div#space").delay(200).css("display","block");
                                                                                                $("div#lod").animate({ scrollTop: 0 }, "slow");
                                                                                          },
                                                                                headers : { 
@@ -516,6 +518,7 @@
                                                                                                $("span#output").html($("span#output").html()+"<br/>"+"FINISHED;"+"<br/>"+"readyState : "+xhr.readyState+"<br/>"+"statusCode : "+xhr.status+"<br/>"+"statusText : "+status+"<br/>").parent().css("display","block");
                                                                                                $("button#cnt_shpp").delay(100).css("display","block");
                                                                                                $("div#result_img").delay(200).css("display","block");
+                                                                                               $("div#space").delay(200).css("display","block");
                                                                                                $("div#lod").animate({ scrollTop: 0 }, "slow");
                                                                                            },
                                                                                  headers : { 
