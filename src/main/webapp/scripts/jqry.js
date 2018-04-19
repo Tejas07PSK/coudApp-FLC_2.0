@@ -429,7 +429,6 @@
     
     $("button#plc_od").click(function (){
             var ord_pds = [];
-            console.log($("tr.in_between").children("td:first-child").children("input"));
             ($("tr.in_between").children("td:first-child").children("input")).each(function(){
                  ord_pds.push($(this).val());
             });
