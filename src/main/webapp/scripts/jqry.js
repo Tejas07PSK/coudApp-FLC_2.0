@@ -428,11 +428,12 @@
     });
     
     $("button#plc_od").click(function (){
-            var ord_pds = [];
+            var req = {};
+            req.ord_pds = [];
             ($("tr.in_between").children("td:first-child").children("input")).each(function(){
-                 ord_pds.push($(this).val());
+                 req.ord_pds.push($(this).val());
             });
-            console.log(ord_pds);
+            console.log(req.ord_pds);
          
     });
     
