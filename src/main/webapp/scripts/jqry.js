@@ -429,11 +429,34 @@
     
     $("button#plc_od").click(function (){
             var req = {};
-            req.ord_pds = [];
+            req.USER_SL = $("input#usr_sl").val();
+            req.ORD_PDS = [];
             ($("tr.in_between").children("td:first-child").children("input")).each(function(){
-                 req.ord_pds.push($(this).val());
+                 req.ORD_PDS.push($(this).val());
             });
-            console.log(req.ord_pds);
+            if ( ($("input#use_usr_def_add").val()) === "1" )
+            {
+                  req.CASE = "1";
+                  req.ADDRESS = "DEFAULT";
+            }
+            else if ( ($("input#nt_sv_fr_usr").val()) === "1" )
+            {
+                  req.CASE = "2";
+                  var temp = {
+                                 "NONUSER_LOCALITY" : $("input#sv_def_loc").val(),
+                                 "NONUSER_CITY" : $("input#sv_def_cty").val(),
+                                 "NONUSER_ZIPCODE" : $("input#sv_def_zip").val(),
+                                 "NONUSER_STATE" : $("input#sv_def_ste").val(),
+                                 "NONUSER_COUNTRY" : $("input#sv_def_cntry").val()
+                              };
+                  req.ADDRESS = JSON.stringify(temp);
+            }
+            else
+            {
+                 req.CASE = "3";
+                 req.ADDRESS = $("input#usr_svd_adid").val();
+            }
+            console.log(JSON.stringify(req));
          
     });
     
