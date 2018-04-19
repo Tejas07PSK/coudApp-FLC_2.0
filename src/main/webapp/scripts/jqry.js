@@ -463,6 +463,67 @@
                                                                         req.ADDRESS = $("input#usr_svd_adid").val();
                                                                   }
                                                                   console.log(JSON.stringify(req));
+                                                                  $.ajax({
+                                                                                url : "OrdersServlet" ,
+                                                                                async : true,
+                                                                                cache : true,
+                                                                                contentType : "text/json", 
+                                                                                processData : true,
+                                                                                scriptCharset : "UTF-8",
+                                                                                type : 'PUT',
+                                                                                traditional : true,
+                                                                                timeout : 20000,
+                                                                                dataType : "json",
+                                                                                data : JSON.stringify(req),
+                                                                                beforeSend : function (xhr)
+                                                                                             {
+                                                                                                 xhr.overrideMimeType('text/json');
+                                                                                                 $("span#output").html($("span#output").html()+"<br/>"+"START;"+"<br/>"+"Connecting...."+"<br/>"+"Sending HTTP/PUT Request -> text/json"+"<br/>"+"<br/>"+"url : /OrdersServlet"+"<br/>"+"statusText : "+xhr.statusText+"<br/>"+"readyState : "+xhr.readyState+"<br/>"+"statusCode : "+xhr.status+"<br/>"+"requestbdyData : "+JSON.stringify(req)+"<br/>");
+                                                                                             },
+                                                                                dataFilter : function (respdata,type)
+                                                                                           {
+                                                                                                 var jso = JSON.parse(respdata);
+                                                                                                 if (jso.STATUS_CODE === "1")
+                                                                                                  {
+                                                                                                       $("span#message").html("Orders Placed Successfully").css("color","green");
+                                                                                                       $("div#result_img").css({"background-image":"url('images/success.png')", "-webkit-animation":"jump 0.2s linear 0s infinite alternate", "animation":"jump 0.2s linear 0s infinite alternate", "background-position":"left", "background-color":"white"});
+                                                                                                       $("span#output").html($("span#output").html()+"<br/>"+"FILTERING;"+"<br/>"+"responseType : "+type+"<br/>"+"dbopStatCode : "+jso.STATUS_CODE+"<br/>"+"dbopStat : "+jso.STATUS+"<br/>"+"receivedData : "+respdata+"<br/>");
+                                                                                                       return (JSON.stringify(jso.RESPONSE));
+                                                                                                   }
+                                                                                                   else
+                                                                                                      {
+                                                                                                           $("span#message").html("Failed To Place Orders").css("color","red");
+                                                                                                           $("div#result_img").css({"background-image":"url('images/failed.png')", "-webkit-animation":"vibrate 0.2s linear 0s infinite alternate", "animation":"vibrate 0.2s linear 0s infinite alternate", "background-position":"center", "background-color":"rgba(0,0,0,0.6)"});
+                                                                                                           $("span#output").html($("span#output").html()+"<br/>"+"FILTERING;"+"<br/>"+"responseType : "+type+"<br/>"+"dbopStatCode : "+jso.STATUS_CODE+"<br/>"+"dbopStat : "+jso.STATUS+"<br/>");
+                                                                                                           var ob = {'resp':jso.RESPONSE};
+                                                                                                           return (JSON.stringify(ob));
+                                                                                                      }
+                                                                                           },
+                                                                                 success : function (result,status,xhr)
+                                                                                           {
+                                                                                               $("span#output").html($("span#output").html()+"<br/>"+"SUCCESS;"+"<br/>"+"statusText : "+status+"<br/>"+"statusCode : "+xhr.status+"<br/>"+"readyState : "+xhr.readyState+"<br/>"+"response : "+JSON.stringify(result)+"<br/>");
+                                                                                           },
+                                                                                   error : function (xhr,status,error)
+                                                                                           {
+                                                                                               $("span#message").text("Failed To Place Orders").css("color","red");
+                                                                                               $("div#result_img").css({"background-image":"url('images/failed.png')", "-webkit-animation":"vibrate 0.2s linear 0s 15 alternate", "animation":"vibrate 0.2s linear 0s 15 alternate", "background-position":"center", "background-color":"rgba(0,0,0,0.6)"});
+                                                                                               $("span#output").html($("span#output").html()+"<br/>"+"ERROR;"+"<br/>"+"statusText : "+status+"<br/>"+"statusCode : "+xhr.statusText+"<br/>"+"readyState : "+xhr.readyState+"<br/>"+"errorText : "+error+"<br/>");
+                                                                                           },
+                                                                                complete : function (xhr,status)
+                                                                                           {
+                                                                                               $("div#mod_loader").css("display","none");
+                                                                                               $("span#message").delay(100).css("display","block");
+                                                                                               $("span#output").html($("span#output").html()+"<br/>"+"FINISHED;"+"<br/>"+"readyState : "+xhr.readyState+"<br/>"+"statusCode : "+xhr.status+"<br/>"+"statusText : "+status+"<br/>").parent().css("display","block");
+                                                                                               $("button#cnt_shpp").delay(100).css("display","block");
+                                                                                               $("div#result_img").delay(200).css("display","block");
+                                                                                               $("div#lod").animate({ scrollTop: 0 }, "slow");
+                                                                                           },
+                                                                                 headers : { 
+                                                                                              'Accept': 'json',
+                                                                                              'Content-Type': 'text/json',
+                                                                                              "X-HTTP-Method-Override": "PUT"
+                                                                                          }
+                                                                         });
                                                              });
          
      });

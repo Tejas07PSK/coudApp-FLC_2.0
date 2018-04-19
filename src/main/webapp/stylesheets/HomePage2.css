@@ -1994,6 +1994,7 @@ header#nav_bar
     button.modal_btns
     {
          position: relative;
+         margin: 15px;
          height: 50px;
          font-size: 20px;
          color: yellow;
