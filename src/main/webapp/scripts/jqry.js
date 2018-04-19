@@ -428,37 +428,44 @@
     });
     
     $("button#plc_od").click(function (){
-            var req = {};
-            req.USER_SL = $("input#usr_sl").val();
-            req.ORD_PDS = [];
-            ($("tr.in_between").children("td:first-child").children("input")).each(function(){
-                 req.ORD_PDS.push($(this).val());
-            });
-            if ( ($("input#use_usr_def_add").val()) === "1" )
-            {
-                  req.CASE = "1";
-                  req.ADDRESS = "DEFAULT";
-            }
-            else if ( ($("input#nt_sv_fr_usr").val()) === "1" )
-            {
-                  req.CASE = "2";
-                  var temp = {
-                                 "NONUSER_LOCALITY" : $("input#sv_def_loc").val(),
-                                 "NONUSER_CITY" : $("input#sv_def_cty").val(),
-                                 "NONUSER_ZIPCODE" : $("input#sv_def_zip").val(),
-                                 "NONUSER_STATE" : $("input#sv_def_ste").val(),
-                                 "NONUSER_COUNTRY" : $("input#sv_def_cntry").val()
-                              };
-                  req.ADDRESS = JSON.stringify(temp);
-            }
-            else
-            {
-                 req.CASE = "3";
-                 req.ADDRESS = $("input#usr_svd_adid").val();
-            }
-            console.log(JSON.stringify(req));
+           var v = $("div#mod_slide_box");
+           v.animate({left : '-='+(v.children("div#od_chek")).css("width")}, 100, "linear");
+           v.animate({left : '-=2px'}, 0, "linear",function (){
+                                                                  $("div#od_chek").css("display","none");
+                                                                  $("div#mod_loader").css("display","block");
+                                                                  $("div#lod").delay(200).css("display","inline-block");
+                                                                  var req = {};
+                                                                  req.USER_SL = $("input#usr_sl").val();
+                                                                  req.ORD_PDS = [];
+                                                                  ($("tr.in_between").children("td:first-child").children("input")).each(function(){
+                                                                        req.ORD_PDS.push($(this).val());
+                                                                  });
+                                                                  if ( ($("input#use_usr_def_add").val()) === "1" )
+                                                                  {
+                                                                        req.CASE = "1";
+                                                                        req.ADDRESS = "DEFAULT";
+                                                                  }
+                                                                  else if ( ($("input#nt_sv_fr_usr").val()) === "1" )
+                                                                  {
+                                                                        req.CASE = "2";
+                                                                        var temp = {
+                                                                                          "NONUSER_LOCALITY" : $("input#sv_def_loc").val(),
+                                                                                          "NONUSER_CITY" : $("input#sv_def_cty").val(),
+                                                                                          "NONUSER_ZIPCODE" : $("input#sv_def_zip").val(),
+                                                                                          "NONUSER_STATE" : $("input#sv_def_ste").val(),
+                                                                                          "NONUSER_COUNTRY" : $("input#sv_def_cntry").val()
+                                                                                   };
+                                                                        req.ADDRESS = JSON.stringify(temp);
+                                                                  }
+                                                                  else
+                                                                  {
+                                                                        req.CASE = "3";
+                                                                        req.ADDRESS = $("input#usr_svd_adid").val();
+                                                                  }
+                                                                  console.log(JSON.stringify(req));
+                                                             });
          
-    });
+     });
     
     $("div#add_map").children("span.close").click(function (){
          console.log ("funny");
@@ -474,7 +481,7 @@
     $("button#gtln").click(function(){
          var v = $("div#mod_slide_box");
          v.animate({left : '+='+(v.children("div#lod")).css("width")}, 100, "linear");
-         v.delay(100).animate({left : '+=2px'}, 0, "linear",function (){
+         v.animate({left : '+=2px'}, 0, "linear",function (){
                                                                $("div#lod").children().css("display","none");
                                                                $("div#lod").css("display","none");
                                                                $("div#user_lin").css("display","block");
